@@ -1,4 +1,4 @@
-# cordova-baidupush
+# cordova-plugin-push-baidu
 This project is a Cordova plugin. 
 
 It changes Baidu Yun Push's SDK for Android and iOS to a Cordova plugin. 
@@ -6,7 +6,7 @@ It changes Baidu Yun Push's SDK for Android and iOS to a Cordova plugin.
 
 ## How to install it?
 
-	cordova plugin add https://github.com/samilywang/cordova-baidupush 
+	cordova plugin add https://github.com/SyaOS/cordova-plugin-push-baidu.git
 
 
 ## How to use it?

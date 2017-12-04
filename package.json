@@ -1,15 +1,21 @@
 {
-  "name": "com.samilywang.plugins.baidupush",
+  "name": "com.sya.plugins.baidupush",
   "version": "1.0.1",
-  "cordova_name": "baidupush",
   "description": "\n    This plugin binds appId, userId, channelId of BaiduYun Push.\n    It also accepts messages pushed by BaiduYun.\n",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyaOS/cordova-plugin-baidu-push.git"
+  },
+  "cordova": {
+    "id": "cordova-plugin-push-baidu",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
   "keywords": [
     "BaiduYun",
     "Push"
-  ],
-  "platforms": [
-    "android",
-    "ios"
   ],
   "engines": [
     {
@@ -18,7 +24,7 @@
     }
   ],
   "Author": {
-    "name": "Samily Wang",
-    "mail": "samilywang@icloud.com"
+    "name": "Vesper",
+    "mail": "fengwz18@163.com"
   }
 }
