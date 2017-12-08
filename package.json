@@ -1,30 +1,20 @@
 {
-  "name": "com.sya.plugins.baidupush",
-  "version": "1.0.1",
-  "description": "\n    This plugin binds appId, userId, channelId of BaiduYun Push.\n    It also accepts messages pushed by BaiduYun.\n",
+  "name": "cordova-plugin-baidu-push",
+  "version": "1.0.0",
+  "description": "百度推送 Cordova 插件",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SyaOS/cordova-plugin-baidu-push.git"
   },
-  "cordova": {
-    "id": "cordova-plugin-push-baidu",
-    "platforms": [
-      "android",
-      "ios"
-    ]
+  "author": "Vesper <fengwz18@163.com>",
+  "bugs": {
+    "url": "https://github.com/SyaOS/cordova-plugin-baidu-push/issues"
   },
+  "homepage": "https://github.com/SyaOS/cordova-plugin-baidu-push#readme",
+  "main": "www/baidu-push.js",
   "keywords": [
-    "BaiduYun",
-    "Push"
+    "ecosystem:cordova",
+    "cordova-ios"
   ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=4.0.0"
-    }
-  ],
-  "Author": {
-    "name": "Vesper",
-    "mail": "fengwz18@163.com"
-  }
+  "license": "MIT"
 }

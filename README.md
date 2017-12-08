@@ -1,74 +1,21 @@
-# cordova-plugin-push-baidu
-This project is a Cordova plugin. 
+# cordova-plugin-baidu-push
 
-It changes Baidu Yun Push's SDK for Android and iOS to a Cordova plugin. 
+百度推送 Cordova 插件
 
+## 安装
 
-## How to install it?
+    $ cordova plugin add https://github.com/SyaOS/cordova-plugin-baidu-push.git
 
-	cordova plugin add https://github.com/SyaOS/cordova-plugin-push-baidu.git
+## 使用
 
+```javascript
+window.BaiduPush.bind(function (notify) {
+    /* 推送回调，有可能先于回调调用 */
+}, function (error, result) {
+    /* 绑定回调 */
+});
+```
 
-## How to use it?
-	
-	//Start work, bind the ids
-	window.baidupush.startWork("your baidu app id", function(info){
-		//success callback
-		//your code here
-	});
-	
-	//Stop work, unbind the ids
-	window.baidupush.stopWork(function(info){
-		//your code here
-	});
-	
-	//Resume work, re-bind the ids
-	window.baidupush.resumeWork(function(info){
-		//your code here
-	});
-	
-	//Set tags
-	window.baidupush.setTags(["football", "cake", "doctor"], function(info){
-		//your code here
-	});
-	
-	//Del tags
-	window.baidupush.delTags(["football", "cake"], function(info){
-		//your code here
-	});
-	
-	//List tags
-	window.baidupush.listTags(function(info){
-		//your code here
-	});
-	
-	//Listen notification arrived event, when a notification arrived, the callback function will be called
-	window.baidupush.listenNotificationArrived(function(info){
-		//your code here
-	});
-	
-	//Listen notification clicked event, when a notification is clicked, the callback function will be called
-	window.baidupush.listenNotificationClicked(function(info){
-		//your code here
-	});
-	
-	//Only for android
-	//Listen message arrived event, when a message arrived, the callback function will be called	
-	window.baidupush.listenMessage(function(info){
-		//your code here
-	});
-	
+## 备注
 
-The example of return json object:
-
-	{
-		type: "onBind",
-		data:{
-			requestId: 123456,
-			errorCode: 0,
-			appId: "123456",
-			channelId: "123456",
-			userId: "123456",
-			deviceType: 3
-		}
-	}
+- 目前无论采用 debug 构建还是 release 构建，均推送到生产环境。
