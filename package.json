@@ -14,7 +14,8 @@
   "main": "www/baidu-push.js",
   "keywords": [
     "ecosystem:cordova",
-    "cordova-ios"
+    "cordova-ios",
+    "cordova-android"
   ],
   "license": "MIT"
 }
