@@ -13,6 +13,11 @@ import com.baidu.android.pushservice.PushManager;
 import com.baidu.android.pushservice.PushSettings;
 
 public class BaiduPush extends CordovaPlugin {
+    void notify (String content) {
+        String format = "void (typeof BaiduPush.notify === 'function' && BaiduPush.notify(%s, %s));";
+        webView.sendJavascript(String.format(format, content, "false"));
+    }
+
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("bind")) {
@@ -25,7 +30,10 @@ public class BaiduPush extends CordovaPlugin {
                 }
             });
             BaiduPushReceiver.bindCallbackContext = callbackContext;
-            BaiduPushReceiver.webView = webView;
+            BaiduPushReceiver.plugin = this;
+            if (BaiduPushReceiver.notify != null) {
+                notify(BaiduPushReceiver.notify);
+            }
             return true;
         }
         return false;
@@ -34,6 +42,6 @@ public class BaiduPush extends CordovaPlugin {
     @Override
     public void onDestroy() {
         BaiduPushReceiver.bindCallbackContext = null;
-        BaiduPushReceiver.webView = null;
+        BaiduPushReceiver.plugin = null;
     }
 }

@@ -14,7 +14,8 @@ import com.baidu.android.pushservice.PushMessageReceiver;
 
 public class BaiduPushReceiver extends PushMessageReceiver {
     static CallbackContext bindCallbackContext = null;
-    static CordovaWebView webView = null;
+    static BaiduPush plugin = null;
+    static String notify = null;
 
     @Override
     public void onBind(Context context, int errorCode, String appId, String userId, String channelId, String requestId) {
@@ -40,8 +41,11 @@ public class BaiduPushReceiver extends PushMessageReceiver {
 
     @Override
     public void onNotificationClicked(Context context, String title, String description, String customContentString) {
-        String format = "void (typeof BaiduPush.notify === 'function' && BaiduPush.notify(%s, %s));";
-        webView.sendJavascript(String.format(format, customContentString, "false"));
+        if (plugin != null) {
+            plugin.notify(customContentString);
+        } else {
+            notify = customContentString;
+        }
     }
 
     @Override
