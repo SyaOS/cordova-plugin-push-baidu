@@ -22,10 +22,10 @@ public class BaiduPushReceiver extends PushMessageReceiver {
         if (errorCode == 0) {
             try {
                 JSONObject message = new JSONObject();
-                message.put("appId", appId);
-                message.put("userId", userId);
-                message.put("channelId", channelId);
-                message.put("requestId", requestId);
+                message.put("app_id", appId);
+                message.put("user_id", userId);
+                message.put("channel_id", channelId);
+                message.put("request_id", requestId);
                 bindCallbackContext.success(message);
             } catch (JSONException e) {
                 e.printStackTrace();
